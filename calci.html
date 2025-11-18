@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            padding: 20px;
+            
+        }
+    .parent{
+        display: grid;
+        grid-template-columns:repeat(4, 1fr);
+        width: 14%;
+        gap: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        font-size: larger;
+        margin: auto;
+    }
+    .dis{
+        background-color: white;
+        grid-column: 1/-1;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    }
+    .num{
+        border-radius: 10px;
+        height: 15px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    }
+    .blc{
+        background-color: black;
+        color: white;
+        border-radius: 15px;
+    }
+    .redd{
+        background-color: red;
+        color: 'white';border-radius: 15px;
+    }
+    h1{
+        color: rgb(40, 128, 114);
+    }
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1><br>
+    <div class="parent">
+        <div class="dis"></div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="blc">+</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+        <div class="num">6</div>
+        <div class="blc">-</div>
+        <div class="num">7</div>
+        <div class="num">8</div>
+        <div class="num">9</div>
+        <div class="blc">x</div>
+        <div class="redd">c</div>
+        <div class="num">0</div>
+        <div class="blc">=</div>
+        <div class="blc">/</div>
+    </div>
+</body>
+</html>
