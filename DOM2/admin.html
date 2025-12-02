@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button onclick="window.location.href='index.html'">Go to Home Page</button>
+        <h1>Book Management Page</h1>
+    </header>
+    
+    <div class="container">
+        <section class="add-book-section">
+            <h2>Add New Book</h2>
+            <form id="addBookForm">
+                <input type="text" id="bookTitle" placeholder="Title" required>
+                <input type="text" id="bookAuthor" placeholder="Author Name" required>
+                <select id="bookCategory" required>
+                    <option value="">Select Category</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Technical">Technical</option>
+                </select>
+                <button type="submit">Add Book</button>
+            </form>
+        </section>
+
+        <section class="controls-section">
+            <h2>Controls</h2>
+            <div class="controls-group">
+                <div class="sort-controls">
+                    <button id="sortByATitle">Sort by Title A &rarr; Z</button>
+                    <button id="sortByZTitle">Sort by Title Z &rarr; A</button>
+                </div>
+                <div class="filter-controls">
+                    <label for="filterCategory">Filter by Category:</label>
+                    <select id="filterCategory">
+                        <option value="All">All</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Technical">Technical</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="display-section">
+            <h2>Available Books</h2>
+            <div id="booksDisplayGrid" class="book-grid">
+                </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
