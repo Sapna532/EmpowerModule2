@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elements</title>
+</head>
+<body>
+
+    <h2>Paragraph Manager</h2>
+
+    <button id="addBtn">Add Paragraph</button>
+    <button id="removeBtn">Remove Last Paragraph</button>
+
+    <div id="container"></div>
+
+<script>
+// Get container
+const container = document.getElementById("container");
+
+// Add paragraph
+document.getElementById("addBtn").onclick = function () {
+    const p = document.createElement("p");           // create element
+    p.textContent = "This is a new paragraph.";      // add text
+    container.appendChild(p);                        // add to page
+};
+
+// Remove last paragraph
+document.getElementById("removeBtn").onclick = function () {
+    if (container.lastChild) {
+        container.removeChild(container.lastChild);  // remove last paragraph
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save and Load</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        textarea { 
+            width: 90%; 
+            height: 200px; 
+            padding: 10px; 
+            margin-bottom: 15px; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box; 
+        }
+        button { 
+            padding: 10px 15px; 
+            margin-right: 10px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 4px; 
+            color: white; 
+        }
+        #saveBtn { background-color: #28a745; }
+        #clearBtn { background-color: #dc3545; }
+        .message { margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1> Save and Load User Notes</h1>
+
+    <textarea id="noteTextarea" placeholder="Enter your notes here..."></textarea>
+
+    <div class="controls">
+        <button id="saveBtn">Save Notes</button>
+        <button id="clearBtn">Clear Notes</button>
+    </div>
+
+    <p class="message" id="statusMessage"></p>
+
+    <script>
+        // DOM Elements
+        const noteTextarea = document.getElementById('noteTextarea');
+        const saveBtn = document.getElementById('saveBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const statusMessage = document.getElementById('statusMessage');
+        const STORAGE_KEY = 'userNotesContent'; // Key used for localStorage
+
+        // --- 1. On Page Load: Retrieve and Display Saved Notes ---
+        function loadNotes() {
+            // Check localStorage for saved data
+            const savedNotes = localStorage.getItem(STORAGE_KEY);
+            if (savedNotes) {
+                // Display saved notes in the textarea
+                noteTextarea.value = savedNotes;
+                statusMessage.textContent = 'Notes loaded successfully from storage.';
+            } else {
+                statusMessage.textContent = 'No saved notes found.';
+            }
+        }
+        
+        // --- 2. Save Notes Functionality ---
+        saveBtn.addEventListener('click', () => {
+            const notes = noteTextarea.value.trim();
+            
+            // Key Requirement: Use proper validation to ensure no empty notes are saved.
+            if (notes === '') {
+                alert("Cannot save empty notes. Please enter some text.");
+                statusMessage.textContent = 'Save failed: Notes were empty.';
+                return;
+            }
+
+            // Save notes to localStorage
+            localStorage.setItem(STORAGE_KEY, notes);
+            statusMessage.textContent = 'Notes saved successfully!';
+        });
+
+        // --- 3. Clear Notes Functionality ---
+        clearBtn.addEventListener('click', () => {
+            // Delete the stored item from localStorage
+            localStorage.removeItem(STORAGE_KEY);
+            
+            // Clear the textarea in the UI
+            noteTextarea.value = '';
+            statusMessage.textContent = 'Notes cleared (deleted from storage).';
+        });
+
+        // Execute loadNotes on page load
+        document.addEventListener('DOMContentLoaded', loadNotes);
+    </script>
+</body>
+</html>
