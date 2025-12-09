@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "price": 450,
+    "coverImageURL": "https://bindassbooks.com/cdn/shop/files/il_570xN.3693058786_md2b.jpg?v=1701361785&width=1920"
+  },
+  {
+    "id": 2,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "price": 350,
+    "coverImageURL": "https://bindassbooks.com/cdn/shop/files/il_570xN.3693058786_md2b.jpg?v=1701361785&width=1920"
+  },
+  {
+    "id": 3,
+    "title": "Ikigai",
+    "author": "Héctor García",
+    "price": 300,
+    "coverImageURL": "https://bindassbooks.com/cdn/shop/files/il_570xN.3693058786_md2b.jpg?v=1701361785&width=1920"
+  }
+]
