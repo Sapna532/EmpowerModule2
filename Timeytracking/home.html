@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Daily Time Tracker</h2>
+
+<input type="date" id="dateInput">
+<input type="text" id="titleInput" placeholder="Activity Title">
+<input type="number" id="minutesInput" placeholder="Minutes">
+<select id="categoryInput">
+  <option>Work</option>
+  <option>Study</option>
+  <option>Sleep</option>
+  <option>Exercise</option>
+  <option>Entertainment</option>
+</select>
+
+<button onclick="addActivity()">Add Activity</button>
+<button onclick="analyse()">Analyse</button>
+
+<div id="list"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
