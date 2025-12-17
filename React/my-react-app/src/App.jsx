@@ -1,9 +1,9 @@
-import FirstComponent from "./FirstComponent";
+import Counter from "./Counter";
 
 function App() {
   return (
     <div>
-      <FirstComponent />
+      <Counter />
     </div>
   );
 }
